@@ -4,5 +4,5 @@ class Solution:
         for i in nums :
             new_list.append(i*i)
         new_list.sort()
-        print(new_list)
+        
         return new_list
