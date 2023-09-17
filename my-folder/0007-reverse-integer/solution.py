@@ -1,10 +1,18 @@
 class Solution:
     def reverse(self, x: int) -> int:
-        reverse=0
-        if x>=0:
-            reverse=int(str(x)[::-1])
-        else : 
-            reverse = int(f"-{int(str(abs(x))[::-1])}")
-        if reverse>=(-2**31) and reverse<=(2**31):
+        def reverse_num(x):
+            reverse = 0 
+            while x :
+                digit = x%10
+                reverse = reverse*10 + digit 
+                x=x//10
             return reverse
-        return 0
+        if x < 0:
+            x = -x
+            x = reverse_num(x)
+            x = -x
+        else:
+            x = reverse_num(x)
+        if x < -2**31 or x > 2**31-1:
+            return 0
+        return x
