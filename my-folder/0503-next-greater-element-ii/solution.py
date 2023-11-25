@@ -4,11 +4,14 @@ class Solution:
         res = [-1] * len(nums)
         stack = []
 
-        for _ in range(2):
-            for i in range(len(nums)):
-                while stack and nums[stack[-1]] < nums[i]: # <, not <=
-                    res[stack.pop()] = nums[i]
-                stack.append(i)
-        
+        for i in range(2*len(nums)) :
+            index = i % len(nums)
+
+            while stack and nums[stack[-1]]<nums[index]:
+                curr_index=stack.pop()
+                res[curr_index]=nums[index]
+            
+            stack.append(index)
+
         return res
       
