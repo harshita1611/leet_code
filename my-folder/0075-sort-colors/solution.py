@@ -3,11 +3,18 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        n=len(nums)
-        for i in range(n):
-            min_idx = i
-            for j in range(i+1,n) :
-                if nums[j] < nums[min_idx] :
-                    min_idx=j
-            nums[i] , nums[min_idx] = nums[min_idx] ,nums[i]
+        right=len(nums)-1
+        left=0
+        i=0
 
+        while i<=right:
+            if nums[i]==0:
+                nums[i],nums[left]=nums[left],nums[i]
+                if i==left:
+                    i+=1
+                left+=1
+            elif nums[i]==2:
+                nums[i],nums[right]=nums[right],nums[i]
+                right-=1
+            else:
+                i+=1        
