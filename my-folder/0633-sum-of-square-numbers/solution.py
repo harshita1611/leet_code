@@ -3,10 +3,12 @@ class Solution:
         left=0
         right=int(math.sqrt(c))
 
-        while left<=right:
-            if (int(left*left) + int(right*right))==int(c) :
+        while left<= right :
+            curr= left*left + right* right
+
+            if curr==c:
                 return True
-            elif (int(left*left) + int(right*right))<int(c) :
+            elif curr<c:
                 left+=1
             else:
                 right-=1
