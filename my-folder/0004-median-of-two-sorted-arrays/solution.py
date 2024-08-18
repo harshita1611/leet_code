@@ -8,8 +8,8 @@ class Solution:
         while i<n  and j<m:
             if nums1[i]<nums2[j]:
                 nums3[k]=nums1[i]
-                k+=1
                 i+=1
+                k+=1
             else:
                 nums3[k]=nums2[j]
                 k+=1
